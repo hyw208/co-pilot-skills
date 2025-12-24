@@ -187,3 +187,29 @@ chmod +x skill.sh
     *   Add `.venv/` and `__pycache__/` to your project's `.gitignore` file to avoid committing environment-specific files.
 
 By following these guidelines, you can create powerful, safe, and reusable skills that significantly enhance the capabilities of your AI assistant.
+
+## Testing Skills
+
+This project uses `pytest` for testing skills. Test dependencies are defined under `[project.optional-dependencies.test]` in each skill's `pyproject.toml` file.
+
+To run the tests for a specific skill (e.g., the `calculator` skill):
+
+1.  **Navigate to the skill's directory:**
+    ```bash
+    cd .github/skills/calculator
+    ```
+
+2.  **Activate the virtual environment:**
+    ```bash
+    source .venv/bin/activate
+    ```
+
+3.  **Install the skill with test dependencies:**
+    ```bash
+    uv pip install -e ".[test]"
+    ```
+
+4.  **Run pytest:**
+    ```bash
+    pytest
+    ```
